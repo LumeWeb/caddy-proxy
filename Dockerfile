@@ -3,9 +3,13 @@ ARG GO_VERSION=1.26
 
 FROM golang:${GO_VERSION} AS builder
 
+ARG CADDY_VERSION
+
+ENV CGO_ENABLED=0
+
 RUN go install github.com/caddyserver/xcaddy/cmd/xcaddy@latest
 
-RUN xcaddy build \
+RUN xcaddy build v${CADDY_VERSION} \
     --with github.com/lucaslorentz/caddy-docker-proxy/v2 \
     --with github.com/pberkel/caddy-storage-redis
 

@@ -7,6 +7,9 @@ on:
   workflow_dispatch:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
+permissions:
+  contents: read
+  packages: write
 jobs:
   build:
     runs-on: ubuntu-latest
