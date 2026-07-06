@@ -15,7 +15,7 @@ RUN xcaddy build v${CADDY_VERSION} \
     --with github.com/lucaslorentz/caddy-docker-proxy/v2@${CADDY_DOCKER_PROXY_VERSION} \
     --with github.com/pberkel/caddy-storage-redis \
     --with github.com/xorfox-llc/caddy-otlp-logs \
-    --with go.lumeweb.com/caddy_profiling
+    --with go.lumeweb.com/caddy_profiling@95ade4b
 
 FROM caddy:${CADDY_VERSION}-alpine
 
